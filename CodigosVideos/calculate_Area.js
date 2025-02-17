@@ -52,9 +52,9 @@ function checkCountValue() {
 
 }
 
-function resetCount(){
+function resetCount() {
 
-    count = 0;    
+    count = 0;
     alert("Fue reseteado tus followers.");
     displayCount();
 }
