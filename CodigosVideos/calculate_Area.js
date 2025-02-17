@@ -1,7 +1,7 @@
 let length;
 let width;
 
-function calculateArea(){
+function calculateArea() {
 
     length = parseFloat(document.getElementById("width").value);
     width = parseFloat(document.getElementById("length").value);
@@ -13,11 +13,11 @@ function calculateArea(){
 
 }
 
-let grocery1; 
+let grocery1;
 let grocery2;
 let grocery3;
 
-function calculateGrocery(){
+function calculateGrocery() {
     grocery1 = parseFloat(document.getElementById("grocery1").value);
     grocery2 = parseFloat(document.getElementById("grocery2").value);
     grocery3 = parseFloat(document.getElementById("grocery3").value);
@@ -28,15 +28,33 @@ function calculateGrocery(){
 
 }
 
-let count = 0; 
-
-
-function displayCount(){
-    document.getElementById("countDisplay").innerHTML = count;
-}
+let count = 0;
 
 function increaseCount() {
     count++; // Increment the count by 1
     displayCount(); // Display the count
-  }
+    checkCountValue();
+}
 
+function displayCount() {
+    document.getElementById("countDisplay").innerHTML = count;
+}
+
+function checkCountValue() {
+
+    if (count === 10) {
+        alert("10 followers")
+
+    } else if (count === 20) {
+        alert("20 followers")
+
+    }
+
+}
+
+function resetCount(){
+
+    count = 0;    
+    alert("Fue reseteado tus followers.");
+    displayCount();
+}
