@@ -27,3 +27,16 @@ function calculateGrocery(){
     document.getElementById("resultAmount").innerText = `The total amount is: $ ${totalAmount}`;
 
 }
+
+let count = 0; 
+
+
+function displayCount(){
+    document.getElementById("countDisplay").innerHTML = count;
+}
+
+function increaseCount() {
+    count++; // Increment the count by 1
+    displayCount(); // Display the count
+  }
+

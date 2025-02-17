@@ -84,4 +84,43 @@ const resultado = addReturn(2, 3);
 // El return especifica cual es el ouput de la función. 
 document.getElementById("functiondata3").innerText = addReturn(3,10);
 
-// Actividad de construir nuestra propia función 
+// Function closure: restricción de acceso a las variables, crea variables privadas
+// implementa data oculta. 
+
+function outerFunction(){
+
+    const outerVar = "I am from the outer function";
+    function innerFunction(){
+        console.log(outerVar);
+    }
+    
+    return innerFunction;
+}
+
+const closure = outerFunction();
+closure()
+
+// Beneficios crea ambientes privados, permite el mantenimiento y previene la interferencia o modificación
+// Oculta datos y mejora la seguridad. 
+
+function greetPerson(name){
+    const greeting = "Hello, ";
+    function sayHello(){
+        console.log(greeting + name)
+    }
+
+    return sayHello; 
+}
+
+const greetJohn = greetPerson("John");
+const greetAlice = greetPerson("Alice");
+
+greetJohn();
+greetAlice();
+
+// Function hosting (primero se llama a la función y después se declara)
+sayHelloPerson();
+
+function sayHelloPerson(){
+    console.log("Hello Apps!");
+}
