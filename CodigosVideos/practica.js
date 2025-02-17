@@ -1,3 +1,10 @@
+
+// Github
+// git add --a
+// git config --global user.email "flavio.scargiali@gmail.com"
+// git commit -m "message"
+// git push origin 
+
 // ----------------------------------------------------------------------------------------------
 // Operadores
 // Aritméticos 
