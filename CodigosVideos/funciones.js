@@ -83,3 +83,5 @@ const resultado = addReturn(2, 3);
 
 // El return especifica cual es el ouput de la función. 
 document.getElementById("functiondata3").innerText = addReturn(3,10);
+
+// Actividad de construir nuestra propia función 
