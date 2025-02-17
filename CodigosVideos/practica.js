@@ -183,8 +183,42 @@ ageA = 10;
 let canVoteA = ageA >= 18 ?
     "Yes" : "No";
 
-// Looping and interaction 
+// Looping and interaction: for, while, do while
+// Loop (especifico número de veces o cuando una condición se cumple)
+// for(initialization; condition; update){
+//          code to be executed   
+//}
+// Cuando i alcanza el valor de 5 se interrumpe el loop
+for(let i = 1; i <= 5; i++){
+    console.log(i);
+}
+
+// while: evalua mientras que la condición se mantenga en verdadera
+// while(condition){
+//     // code to be executed
+// }
 
 
+let limit = 50;
+let af = 0;
+let bf = 1; 
 
+while (af <= limit){
+    console.log(af);
+    let temp = af + bf;
+    af = bf;
+    bf = temp;
+}
 
+// do while se ejecuta hasta que la condición deja de ser verdadera. Pero 
+// a diferencia de los otros, chequea la condición. 
+
+// do{
+//     // code to be executed
+// } while (condition); 
+let roll = 1; 
+do{
+
+    console.log("Rolled a " + roll);
+    roll++;
+} while(roll < 7);
