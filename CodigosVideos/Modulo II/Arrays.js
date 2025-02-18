@@ -90,5 +90,87 @@ for(let i = 0; i < fruits.length; i++){
 };
 
 
+// Array methods: forEach, Map, Filter, Reduce, Find
+// forEach itera sobre el array y aplica la función a cada elemento
+function sendWelcomeEmail(email){
+
+    console.log(`Welcome email sent to ${email}`);
+
+}
+
+const users = [
+    {name : 'Alice', email: 'alice@example.com'},
+    {name : 'Maca', email: 'Maca@example.com'},
+    {name : 'Pepe', email: 'Pepe@example.com'},
+];
+
+console.log(users)
+
+users.forEach((user) => {
+    sendWelcomeEmail(user.email);
+});
 
 
+// Map methods: crea un nuevo array y aplica una función a cada elemento
+// Sirve para transformar datos sin modificar el array original
+
+const products = [
+    {name: 'Laptop', price:1000},
+    {name: 'SmartPhone', price:500},
+    {name: 'Tablet', price:300},
+    {name: 'Monitor', price:250},
+    {name: 'Keyboard', price:50}
+];
+
+products.map((product) => {
+
+    console.log(`The price of ${product.name} is $ ${product.price}`);
+});
+
+// Filter methods: crea un array nuevo que contiene elementos que cumplen con cierta condición 
+function filterProductsByPriceRange(products, minPrice, maxPrice){
+
+    return products.filter((product) => product.price >= minPrice && product.price <= maxPrice)
+
+};
+
+const minPrice = 100; 
+const maxPrice = 500; 
+
+const filterdProducts = filterProductsByPriceRange(products,minPrice,maxPrice);
+
+filterdProducts.forEach((product) =>{
+    console.log(`${product.name} is of $ ${product.price}`); 
+});
+
+// Reduce method: reduce el array a un solo valor y se usa para agregar datos
+// El 0 se asigna a total
+const orderPrice = [50,30,25,40,15]
+const totalOrderValue = orderPrice.reduce((total,price) => total + price, 0);
+console.log(`The total value of the order is ${totalOrderValue}`);
+
+// Find method: devuelve el primer elemento que cumple con la condicion
+// Uso del \n para aplicar un salto de linea en el console.log
+const employees = [
+    {id: 1, name: "Alice", Eid: "EMP001"},
+    {id: 2, name: "Maca", Eid: "EMP002"},
+    {id: 3, name: "Pepe", Eid: "EMP003"}
+]
+
+const employee = employees.find((e) => e.id === 2); 
+console.log(`\nName:', ${employee.name} \nId: ${employee.Eid}`);
+
+// Matrices bidemensionales (organizados en columnas y filas)
+const grid = [
+
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+];
+
+
+for (let i = 0; i < grid.length; i++){
+    for(let j = 0; j < grid[i].length;j++){
+        console.log(`Element at (${i}, ${j}): ${grid[i][j]}`);
+    }
+}
