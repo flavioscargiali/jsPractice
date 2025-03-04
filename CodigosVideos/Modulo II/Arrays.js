@@ -174,3 +174,192 @@ for (let i = 0; i < grid.length; i++){
         console.log(`Element at (${i}, ${j}): ${grid[i][j]}`);
     }
 }
+
+// Clases  y Objetos en JS
+// Class template para crear objetos en JS. Encapsula propiedades, funciton, metodos y datos. 
+// Una clase que se llama persona puede tener como propiedad (name, age) y como method (syaHello)
+
+
+// Objetc es una instancia especifica de una clase. Representa
+// entidad con valores unicos. Encapsula estados y compartamiento en una 
+// unidad simple. 
+// Se puede crear un objeto persona con person1 y las propiedades (name y age), otra persona 2 
+// con las misma propiedades. 
+
+// Classes 
+class Persona{
+    constructor(firstName, lastName){
+        this.firstName = firstName;
+        this.lastName = lastName
+    }
+    getFullName(){
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+
+const person1 = new Persona("John","Doe");
+console.log(person1.getFullName());
+
+// Objetcs in JS
+class Car{
+
+    constructor(make, model, year){
+
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+    startEngine(){
+        console.log(`The ${this.model}'s engine is running make in ${this.make}.`)
+    }
+}
+
+const myCar = new Car("Toyota", "Camry", 2022);
+myCar.startEngine(); 
+
+// Object literals
+const person = {
+    firstName: 'Alice',
+    lastName: 'Johnson',
+    getFullName: function(){
+        return `${this.firstName} ${this.lastName}`;
+    }
+};
+
+console.log(person.getFullName());
+
+// Con las clases yo puedo cambiar, en cambio con los objetos literales
+// se imprime lo definido dentro de la const. 
+
+
+// Acceso a las propiedades de los objetos
+// . and // notation
+
+const personN = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age:30
+};
+
+console.log(personN.firstName);
+console.log(personN["firstName"]);
+
+// Array of objects
+const students = [
+    {name: 'Alice', age:25},
+    {name: 'Bob', age:22},
+    {name: 'Charlie', age:28}
+]
+
+console.log(students[0].name);
+console.log(students[2].age)
+
+
+//Modifying elements
+students[1].name = 'Robert';
+
+// Loop
+for (let i = 0; i < students.length; i++){
+    console.log(students[i].name);
+};
+
+students.forEach(function(student){
+    console.log(student.name);
+});
+
+// Push mehod: para agregar nuevo elemento al array
+students.push({name: 'Macarena', age: 30});
+console.log(students);
+
+// Pop method: remueve el último elemnento
+const removedStudent = students.pop();
+console.log(students);
+
+// Filter (filtra un array) and map (genera un nuevo array a partir de una propiedad de otro array)
+const adults = students.filter(student => student.age >= 23);
+const studentNames = students.map(student => student.name);
+
+console.log(adults);
+console.log(studentNames); 
+
+// con + se puede concatenar STRING
+const firsNameStr = "Peter";
+const greeting = "Hello, " + firsNameStr + '!';
+console.log(greeting);
+const stringLen = greeting.length;
+
+// Acceso a los caracteres 
+const firstStr = firsNameStr[0];
+console.log(firstStr);
+
+// Methods
+const sentence = "The quick brown fox jumps over the lazy dog.";
+const hasFox = sentence.includes("fox");
+const indexOfFox = sentence.indexOf("fox");
+
+// substring 
+const text = "Hello, World";
+const subText1 = text.substring(0,5); // Hello
+const subText2 = text.slice(7); // World!
+const subText3 = text.substring(7,5); // world!
+
+// Replace
+const updatedText = text.replace("World", "Universe"); 
+console.log(updatedText);
+
+// Spliting: separar por caracteres 
+const csvData = "Alice, 25, NY, Bob, 30, Los Angeles;Charlie, 28, Chicago";
+const peopleArray = csvData.split(';');
+console.log(peopleArray); 
+
+// Trim: Limpiar espacios 
+const textTrim = "Trim me!    ";
+const timmedText = textTrim.trim(); 
+console.log(textTrim + " " + timmedText); 
+
+// Introducción a las matematicas
+// Basic math operations
+// Rounding numbers (Ojo que Math no existe)
+const numbersMaths = 3.6; 
+const rounded = Math.round(numbersMaths);
+const ceil = Math.ceil(numbersMaths); 
+const floor = Math.floor(numbersMaths);
+
+console.log(rounded);
+console.log(ceil);
+console.log(floor);
+
+// Exponential and Log
+const base = 2; 
+const exponent = 3; 
+
+const power = Math.pow(base, exponent); // Exponencial
+const squareRoot = Math.sqrt(base); // Raiz cuadrada
+const naturalLog = Math.log(base); // Log natural
+
+// Random 
+const random = Math.random();
+
+// Date Object 
+// Creating 
+const currentDate = new Date(); // Currente date
+const specificDate = new Date(2023, 0, 15) // 15 de enero
+
+
+const year = currentDate.getFullYear();
+const month = currentDate.getMonth(); // (del 0 al 11)
+const day = currentDate.getDate(); // se puede hours(0-23), minutes (0 -59), seconds;
+console.log(year + '-' + month + ' '+ day);
+
+// Formatting dates 
+const date = new Date();
+
+// Para ajustar la fecha a la configuración local
+const formattedDate = date.toLocaleDateString(); 
+const formattedTime =  date.toLocaleTimeString(); 
+
+
+
+
+
+
