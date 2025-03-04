@@ -352,13 +352,17 @@ const day = currentDate.getDate(); // se puede hours(0-23), minutes (0 -59), sec
 console.log(year + '-' + month + ' '+ day);
 
 // Formatting dates 
-const date = new Date();
-
 // Para ajustar la fecha a la configuración local
-const formattedDate = date.toLocaleDateString(); 
-const formattedTime =  date.toLocaleTimeString(); 
+const formattedDate = currentDate.toLocaleDateString(); 
+const formattedTime =  currentDate.toLocaleTimeString(); 
 
+// Timing Function 
+// setTimeout: demora la ejecución unos milesegundo
+setTimeout(function(){
+    console.log("dos segundos");
+}, 2000);
 
+// setInterval
 
 
 
